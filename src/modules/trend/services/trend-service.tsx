@@ -1,6 +1,7 @@
 import { CandleData } from "../types";
 
 export const poolService = {
+  // TODO: add other query parameters (interval, limit, etc) as the input of method
   async getTokenTrend(pair: string): Promise<CandleData[]> {
     const response = await fetch(`https://api.binance.com/api/v3/klines?symbol=${pair}&interval=1h&limit=24`);
 
